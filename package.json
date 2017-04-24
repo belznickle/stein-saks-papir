@@ -1,0 +1,24 @@
+{
+  "name": "stein-saks-papir",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enra4/stein-saks-papir.git"
+  },
+  "author": "enra4 <cudcsb@gmail.com> (https://github.com/enra4)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enra4/stein-saks-papir/issues"
+  },
+  "homepage": "https://github.com/enra4/stein-saks-papir#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "lowdb": "^0.16.2",
+    "socket.io": "^1.7.3"
+  }
+}
