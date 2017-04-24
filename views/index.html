@@ -2,9 +2,46 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title></title>
+		<title>Stein, Saks, Papir</title>
+		<link rel="stylesheet" href="../public/stylesheets/stylesheet_spill.css">
+		<link rel="stylesheet" href="../public/stylesheets/stylesheet_pictures.css">
 	</head>
 	<body>
-
+		<div id="top">
+			<div class="scoreBorder">
+				<div id="leftdiv">
+					<a id="points1">0</a>
+				</div>
+				<div id="rightdiv">
+					<a id="points2">0</a>
+				</div>
+			</div>
+		</div>
+		<div id="chosenPic">
+			<div class="leftSide side">
+				<img id="unknown" src="http://elevweb.akershus-fk.no/~auei1302/uke49/media/ukjent.png" alt="Unknown">
+			</div>
+			<div class="rightSide side">
+				<img id="unknown" src="http://elevweb.akershus-fk.no/~auei1302/uke49/media/ukjent.png" alt="Unknown"">
+			</div>
+		</div>
+		<script type="text/javascript">
+			var userOnePointsEl = document.querySelector("#points1").innerHTML
+			var userTwoPointsEl = document.querySelector("#points2").innerHTML
+			class User {
+				constructor(topkek) {
+					this.points = parseInt(topkek)
+					this.pointsEl = topkek
+				}
+				updateScore(){
+					this.pointsEl = this.points
+				}
+				add(){
+					this.points++
+					updateScore()
+				}
+			}
+			// eks: var user1 = new User(userOnePointsEl)
+		</script>
 	</body>
 </html>
