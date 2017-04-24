@@ -11,5 +11,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
 	console.log(`kjører på port ${PORT}, (localhost:4000)`)
 })
-
-console.log(jaja)
