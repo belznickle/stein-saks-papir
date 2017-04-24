@@ -1,0 +1,37 @@
+body {
+    background-color: #008C79;
+}
+p {
+    background-color: white;
+    font-family: Open Sans;
+}
+#top {
+    height: 50px;
+}
+.scoreBorder {
+    border: 1px solid black;
+    width: 100px;
+    height: 50px;
+    background-color: black;
+    display: block;
+    margin: auto;
+}
+#leftdiv {
+    width: 50px;
+    height: 50px;
+    float: left;
+    border-right: 1px solid white;
+}
+#rightdiv {
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    border-left: 1px solid white;
+}
+a{
+    color: white;
+    font-size: 45px;
+    width: 50px;
+    text-align: center;
+    margin-left: 12.5px;
+}
