@@ -1,0 +1,13 @@
+body {
+	font-family: helvetica;
+}
+
+table {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+tr, td {
+	text-align: left;
+}

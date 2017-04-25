@@ -3,11 +3,12 @@ html
 	head
 		meta(charset='utf-8')
 		title
+		link(href='/stylesheets/leaderboards.css', rel='stylesheet')
 	body
 		table
+			tr
 			each person in leaderboards
 				tr
 					each key in person
 						td= key
-		script(type='text/javascript').
-			
+		script(src='/javascript/leaderboards.js' type='text/javascript')
