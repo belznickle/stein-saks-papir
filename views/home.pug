@@ -1,0 +1,14 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		title home
+	body
+		if user
+			p
+				| Hei, #{user.username} du er nå logget inn 
+				a(href='/logout') logg ut
+		else
+			p
+				| hei vær snill å 
+				a(href='/login') logg in
