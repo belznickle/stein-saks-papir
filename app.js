@@ -21,7 +21,7 @@ passport.use(new Strategy((username, password, cb) => {
 	auth.findByUsername(username, (err, user) => {
 		if (err) return cb(err)
 		if (!user) return cb(null, false)
-		if (user.password !== password) return cb(null, false)
+		if (auth.hash(password) !== user.password) return cb(null, false)
 		return cb(null, user)
 	})
 }))
