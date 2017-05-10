@@ -5,3 +5,10 @@ for (let inner of arr) {
 	td.innerHTML = inner
 	tr.appendChild(td)
 }
+
+tr = document.querySelectorAll('tr')
+for (let i = 1; i < tr.length; i++) {
+	let td = document.querySelectorAll('td')[(i * 6) + 2]
+	td.innerHTML = parseInt(td.innerHTML)
+	console.log(td.innerHTML)
+}
