@@ -1,13 +1,38 @@
 body {
-	font-family: helvetica;
+	font-family: 'Malgun Gothic';
+	font-size: 32px;
+	background-color: #092756;
+	margin: 0;
 }
 
 table {
+	border-collapse: collapse;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 tr, td {
-	text-align: left;
+	text-align: center;
+}
+
+tr:nth-child(1) {
+	background-color: #FFFFFF
+}
+
+td:nth-child(6n+1) {
+	width: 40px;
+}
+
+td:nth-child(6n+2) {
+	width: 400px;
+}
+
+tr {
+	height: 60px;
+	background-color: #e8eaea;
+}
+
+td {
+	width: 100px;
 }

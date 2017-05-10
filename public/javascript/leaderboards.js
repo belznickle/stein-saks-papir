@@ -10,5 +10,5 @@ for (let inner of arr) {
 tr = document.querySelectorAll('tr')
 for (let i = 1; i < tr.length; i++) {
 	let td = document.querySelectorAll('td')[(i * 6) + 2]
-	td.innerHTML = parseInt(td.innerHTML)
+	td.innerHTML = Math.round(parseFloat(td.innerHTML))
 }
