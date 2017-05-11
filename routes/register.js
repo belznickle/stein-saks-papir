@@ -16,4 +16,5 @@ router.post('/', (req, res) => {
 		res.render('register', { error: 'brukernavnet er allerede i bruk' })
 	}
 })
+
 module.exports = router
