@@ -12,27 +12,29 @@ html
 				input(type='submit', value='delete lobby')
 		script(src='/socket.io/socket.io.js' type='text/javascript')
 		script(type='text/javascript').
-			var socket = io()
+			init()
+			let socket = io()
 			socket.on('createdLobby', (creator) => {
 				let p = document.createElement('p')
 				p.innerHTML = `${creator} venter på en spiller`
-				document.querySelector('body').append(p)
+				document.body.appendChild(p)
 			})
 			
 			socket.on('endedLobby', (creator) => {
 				let paragraphs = document.querySelectorAll('p')
 				for (let p of paragraphs) {
 					if (p.innerHTML.split(' ')[0] === creator) {
-						document.querySelector('body').removeChild(p)
+						document.body.removeChild(p)
 						return
 					}
 				}
 			})
 			
-			// init
-			let games = !{JSON.stringify(games)}
-			for (let game of games) {
-				let p = document.createElement('p')
-				p.innerHTML = `${game.creator} venter på en spiller`
-				document.querySelector('body').append(p)
+			function init() {
+				let games = !{JSON.stringify(games)}
+				for (let game of games) {
+					let p = document.createElement('p')
+					p.innerHTML = `${game.creator} venter på en spiller`
+					document.body.appendChild(p)
+				}
 			}
