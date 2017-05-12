@@ -1,9 +1,13 @@
 const express = require('express')
+const app = express()
+const server = require('http').Server(app)
+const io = require('socket.io')(server)
+const socketClient = require('socket.io-client')('http://localhost:3000')
 const passport = require('passport')
 const Strategy = require('passport-local').Strategy
 const db = require('./lib/db.js')
 const auth = require('./lib/auth.js')
-const app = express()
+
 const PORT = 3000
 const SECRET = 'this is a big secret'
 
@@ -16,6 +20,16 @@ app.use(require('cookie-parser')())
 app.use(require('express-session')({ secret: SECRET, resave: false, saveUninitialized: false }))
 app.use(passport.initialize())
 app.use(passport.session())
+
+io.on('connection', (socket) => {
+	socket.on('createdLobby', (creator) => {
+		io.emit('createdLobby', creator)
+	})
+
+	socket.on('endedLobby', (creator) => {
+		io.emit('endedLobby', creator)
+	})
+})
 
 passport.use(new Strategy((username, password, cb) => {
 	auth.findByUsername(username, (err, user) => {
@@ -39,6 +53,6 @@ passport.deserializeUser((id, cb) => {
 
 app.use('/', require('./routes/index.js')) // henter alle routes herifra
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
 	console.log(`kjører på port ${PORT}, (localhost:${PORT})`)
 })

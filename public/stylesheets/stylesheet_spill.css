@@ -6,32 +6,35 @@ p {
     font-family: Open Sans;
 }
 #top {
-    height: 50px;
+    height: 125px;
+    background-color: black;
+    position: relative;
 }
 .scoreBorder {
     border: 1px solid black;
-    width: 100px;
-    height: 50px;
-    background-color: black;
+    width: 150px;
+    height: 123px;
+    background-color: white;
     display: block;
-    margin: auto;
+    position: absolute;
+    left: 45.45%;
 }
 #leftdiv {
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 123px;
     float: left;
-    border-right: 1px solid white;
+    border-right: 3px solid black;
 }
 #rightdiv {
-    width: 50px;
-    height: 50px;
-    margin-left: 50px;
-    border-left: 1px solid white;
+    width: 75px;
+    height: 123px;
+    margin-left: 75px;
+    border-left: 3px solid black;
 }
 a{
-    color: white;
-    font-size: 45px;
-    width: 50px;
+    color: black;
+    font-size: 60px;
     text-align: center;
-    margin-left: 12.5px;
+    margin-left: 22.5px;
+    padding-top: 63px;
 }
