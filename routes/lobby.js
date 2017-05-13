@@ -14,8 +14,6 @@ router.post('/create', (req, res) => {
 			localSocket.emit('createdLobby', req.user.username)
 		}
 	}
-
-	res.redirect('/lobby') // temp
 })
 
 router.post('/delete', (req, res) => {
@@ -23,8 +21,6 @@ router.post('/delete', (req, res) => {
 		lobby.end(req.user.username)
 		localSocket.emit('endedLobby', req.user.username)
 	}
-
-	res.redirect('/lobby')
 })
 
 module.exports = router

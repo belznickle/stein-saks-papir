@@ -9,12 +9,8 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
 	let username = req.body.username
 	let password = req.body.password
-
-	if (auth.newAccount(username, password)) { // if success
-		res.render('register', { error: 'registrert' })
-	} else {
-		res.render('register', { error: 'brukernavnet er allerede i bruk' })
-	}
+	let error = auth.newAccount(username, password)
+	res.render('register', { error: error })
 })
 
 module.exports = router
