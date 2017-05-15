@@ -29,6 +29,10 @@ io.on('connection', (socket) => {
 	socket.on('endedLobby', (creator) => {
 		io.emit('endedLobby', creator)
 	})
+
+	socket.on('gameStarted', (creator) => {
+		io.emit('gameStarted', creator)
+	})
 })
 
 passport.use(new Strategy((username, password, cb) => {

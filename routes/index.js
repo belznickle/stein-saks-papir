@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
+router.use('/game', require('./game.js'))
 router.use('/leaderboards', require('./leaderboards.js'))
 router.use('/lobby', require('./lobby.js'))
 router.use('/login', require('./login.js'))
