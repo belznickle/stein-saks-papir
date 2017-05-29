@@ -2,6 +2,7 @@ const express = require('express')
 const localSocket = require('socket.io-client')('http://localhost:3000')
 const lobby = require('../lib/lobby.js')
 const db = require('../lib/db.js')
+const logic = require('../lib/logic.js')
 const router = express.Router()
 
 router.get('/:creator', (req, res) => {
@@ -53,6 +54,7 @@ router.post('/', (req, res) => {
 	if (lobby.getGame(username)) {
 		let game = lobby.getGame(username)
 		if (game.opponentPick) {
+			logic(game)
 			lobby.end(game.creator)
 			localSocket.emit('gameEnded', game.creator, game.opponent)
 			res.redirect('/lobby')
@@ -61,6 +63,7 @@ router.post('/', (req, res) => {
 	} else if (lobby.getGameOpponent(username)) {
 		let game = lobby.getGameOpponent(username)
 		if (game.creatorPick) {
+			logic(game)
 			lobby.end(game.creator)
 			localSocket.emit('gameEnded', game.creator, game.opponent)
 			res.redirect('/lobby')
