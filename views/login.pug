@@ -3,14 +3,14 @@ html
 	head
 		meta(charset='utf-8')
 		title login
-		link(href='./stylesheets/login.css', rel='stylesheet')
+		link(href='/stylesheets/login.css', rel='stylesheet')
 	body
 		.login
 			h1 Login
-			form(action='./login', method='post')
+			form(action='/login', method='post')
 				input(type='text', name='username', placeholder='Username')
 				input(type='password', name='password', placeholder='Password')
 				input.btn.btn-primary.btn-block.btn-large(type='submit', value='Submit')
 			p
-				| If you don't have a user
-				a(href='./register') sign up
+				| If you don't have a user 
+				a(href='/register') sign up

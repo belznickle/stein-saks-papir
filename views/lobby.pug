@@ -4,13 +4,13 @@ html
 		meta(charset='utf-8')
 		title lobby
 	body
-		form(action='./lobby/create', method='post')
+		form(action='/lobby/create', method='post')
 			div
 				input(type='submit', value='create lobby')
-		form(action='./lobby/delete', method='post')
+		form(action='/lobby/delete', method='post')
 			div
 				input(type='submit', value='delete lobby')
-		script(src='./socket.io/socket.io.js' type='text/javascript')
+		script(src='/socket.io/socket.io.js' type='text/javascript')
 		script(type='text/javascript').
 			const user = !{JSON.stringify(user)}
 			init()
@@ -37,7 +37,7 @@ html
 
 			socket.on('gameStarted', (creator) => {
 				if (creator === user) {
-					window.location.replace(`./game/${user}`)
+					window.location.replace(`/game/${user}`)
 				} else {
 					let paragraphs = document.querySelectorAll('p')
 					for (let p of paragraphs) {

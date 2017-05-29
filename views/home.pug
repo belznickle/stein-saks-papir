@@ -7,11 +7,11 @@ html
 		if user
 			p
 				| Hei, #{user.username} du er nå logget inn
-				a(href='./logout') logg ut
+				a(href='/logout') logg ut
 			p
 				| Gå til
-				a(href='./lobby') lobby
+				a(href='/lobby') lobby
 		else
 			p
 				| hei vær snill å
-				a(href='./login') logg in
+				a(href='/login') logg in
