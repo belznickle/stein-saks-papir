@@ -6,7 +6,7 @@ for (let choice of choices) {
 	button.addEventListener('click', (e) => {
 		let form = document.createElement('form')
 		form.method = 'POST'
-		form.action = '/game'
+		form.action = './game'
 
 		let element = document.createElement('input')
 		element.name = 'choice'

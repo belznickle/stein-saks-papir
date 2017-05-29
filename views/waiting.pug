@@ -5,12 +5,12 @@ html
 		title home
 	body
 		p venter på motstander
-		script(src='/socket.io/socket.io.js' type='text/javascript')
+		script(src='./socket.io/socket.io.js' type='text/javascript')
 		script(type='text/javascript').
 			const user = !{JSON.stringify(user)}
 			let socket = io()
 			socket.on('gameEnded', (creator, opponent) => {
 				if (creator === user || opponent === user) {
-					window.location.replace('/lobby')
+					window.location.replace('./lobby')
 				}
 			})
