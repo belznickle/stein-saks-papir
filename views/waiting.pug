@@ -4,13 +4,24 @@ html
 		meta(charset='utf-8')
 		title home
 	body
-		p venter på motstander
-		script(src='/socket.io/socket.io.js' type='text/javascript')
-		script(type='text/javascript').
-			const user = !{JSON.stringify(user)}
-			let socket = io()
-			socket.on('gameEnded', (creator, opponent) => {
-				if (creator === user || opponent === user) {
+		if winner
+			p vinner: #{winner}
+			script(type='text/javascript').
+				setTimeout(() => {
 					window.location.replace('/lobby')
-				}
-			})
+				}, 3000)
+		else
+			p venter på motstander
+			script(src='/socket.io/socket.io.js' type='text/javascript')
+			script(type='text/javascript').
+				const user = !{JSON.stringify(user)}
+				let socket = io()
+				socket.on('gameEnded', (creator, opponent, winner) => {
+					console.log(user)
+					if (creator === user || opponent === user) {
+						document.querySelector('p').innerHTML = `vinner: ${winner}`
+						setTimeout(() => {
+							window.location.replace('/lobby')
+						}, 3000)
+					}
+				})

@@ -54,19 +54,15 @@ router.post('/', (req, res) => {
 	if (lobby.getGame(username)) {
 		let game = lobby.getGame(username)
 		if (game.opponentPick) {
-			logic(game)
+			logic(req, res, game)
 			lobby.end(game.creator)
-			localSocket.emit('gameEnded', game.creator, game.opponent)
-			res.redirect('/lobby')
 			return
 		}
 	} else if (lobby.getGameOpponent(username)) {
 		let game = lobby.getGameOpponent(username)
 		if (game.creatorPick) {
-			logic(game)
+			logic(req, res, game)
 			lobby.end(game.creator)
-			localSocket.emit('gameEnded', game.creator, game.opponent)
-			res.redirect('/lobby')
 			return
 		}
 	} else {

@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
 		return
 	}
 
-	res.render('waiting', { user: req.user.username })
+	res.render('waiting', { user: req.user.username, winner: false })
 })
 
 module.exports = router
