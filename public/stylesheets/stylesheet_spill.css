@@ -7,14 +7,23 @@ body {
 	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
 }
-p {
-    background-color: white;
+.points {
     font-family: Open Sans;
+	color: black;
+    font-size: 75px;
+    text-align: center;
+    margin-left: 18px;
+    padding-top: 63px;
 }
 #top {
     height: 100px;
  	background-color: rgba(32, 32, 32, 0.5);
     position: relative;
+}
+#frame {
+	display: flex;
+	margin: 0 auto;
+	position: relative;
 }
 .scoreBorder {
     border: 1px solid black;
@@ -23,6 +32,11 @@ p {
     background-color: white;
     display: flex;
     position: relative;
+	margin: 0 auto;
+}
+.inline {
+	position: relative;
+	float: left;
 	margin: 0 auto;
 }
 .score {
@@ -34,14 +48,11 @@ p {
 	border-right: 1px solid black;
 }
 #rightdiv {
+	width: 74px;
 	border-left: 1px solid black;
 }
-a{
-    color: black;
-    font-size: 75px;
-    text-align: center;
-    margin-left: 18px;
-    padding-top: 63px;
+p {
+	color: white;
 }
 html {
 	width: 100%;
