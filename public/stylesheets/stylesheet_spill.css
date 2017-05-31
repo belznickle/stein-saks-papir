@@ -59,3 +59,14 @@ html {
 	height: 100%;
 	overflow: hidden;
 }
+.playerinfo{
+	width: 175px;
+}
+#player1info {
+	text-align: right;
+	margin-right: 0;
+}
+#player2info {
+	text-align: left;
+	margin-left: 0;
+}

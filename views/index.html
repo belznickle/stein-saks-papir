@@ -9,9 +9,9 @@
 	<body>
 		<div id="top">
 			<div id="frame">
-				<div class="inline">
-					<p id="player1">Player:</p>
-					<p id="player1elo">Elo:</p>
+				<div class="inline playerinfo" id="player1info">
+					<p id="player1">Player: </p>
+					<p id="player1elo">Elo: </p>
 				</div>
 				<div class="scoreBorder inline">
 					<div id="leftdiv" class="score">
@@ -21,18 +21,18 @@
 						<a id="points2" class="points">0</a>
 					</div>
 				</div>
-				<div class="inline">
-					<p id="player2">Player:</p>
-					<p id="player2elo">Elo:</p>
+				<div class="inline playerinfo" id="player2info">
+					<p id="player2">Player: </p>
+					<p id="player2elo">Elo: </p>
 				</div>
 			</div>
 		</div>
 		<div id="chosenPic">
 			<div class="leftSide side">
-				<img id="unknown" src="http://elevweb.akershus-fk.no/~auei1302/uke49/media/ukjent.png" alt="Unknown">
+				<img id="unknown" src="http://elevweb.akershus-fk.no/~auei1302/uke49/media/ukjent.png" alt="Unknown" width="300px" height="300px">
 			</div>
 			<div class="rightSide side">
-				<img id="unknown" src="http://elevweb.akershus-fk.no/~auei1302/uke49/media/ukjent.png" alt="Unknown">
+				<img id="unknown" src="http://elevweb.akershus-fk.no/~auei1302/uke49/media/ukjent.png" alt="Unknown" width="300px" height="300px">
 			</div>
 		</div>
 		<script type="text/javascript">
@@ -52,6 +52,16 @@
 				}
 			}
 			// eks: var user1 = new User(userOnePointsEl)
+			function add() {
+				let noe = document.querySelector("#player1")
+				noe.innerHTML += "DagSuger"
+				let fisk = document.querySelector("#player1elo")
+				fisk.innerHTML += "1200"
+				let krabbe = document.querySelector("#player2")
+				krabbe.innerHTML += "Kjeks"
+				let kjeks = document.querySelector("#player2elo")
+				kjeks.innerHTML += "1200"
+			}
 		</script>
 	</body>
 </html>
