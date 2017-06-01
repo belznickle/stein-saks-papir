@@ -27,22 +27,22 @@
 				</div>
 			</div>
 		</div>
-	<!--<div id="options">
-			<div>
-				<img src="" alt="stone" class="choices">
+		<div id="options">
+			<div class="choises_div" id="stone">
+				<img src="http://elevweb.akershus-fk.no/~scan2008/Stein,%20Saks,%20Papir/stein.png" alt="stone" class="choices">
 			</div>
-			<div>
-				<img src="" alt="scissor">
+			<div class="choises_div" id="scissor">
+				<img src="http://elevweb.akershus-fk.no/~scan2008/Stein,%20Saks,%20Papir/scissor.png" alt="scissor" class="choices" width="96px">
 			</div>
-			<div>
-				<img src="" alt="paper">
+			<div class="choises_div" id="paper">
+				<img src="http://elevweb.akershus-fk.no/~scan2008/Stein,%20Saks,%20Papir/Paper.jpg" alt="paper" class="choices" id="paperPic">
 			</div>
-		</div>		-->
+		</div>
 		<div id="chosenPic">
-			<div class="leftSide side">
+			<div id="leftSide" class="side">
 			<!--	<img id="unknown" src="http://elevweb.akershus-fk.no/~auei1302/uke49/media/ukjent.png" alt="Unknown" width="300px" height="300px">-->
 			</div>
-			<div class="rightSide side">
+			<div id="rightSide" class="side">
 			<!--	<img id="unknown" src="http://elevweb.akershus-fk.no/~auei1302/uke49/media/ukjent.png" alt="Unknown" width="300px" height="300px">-->
 			</div>
 		</div>
@@ -72,6 +72,12 @@
 				krabbe.innerHTML += "Kjeks"
 				let kjeks = document.querySelector("#player2elo")
 				kjeks.innerHTML += "1200"
+			}
+			let stoneEl = document.querySelector("#stone")
+			stoneEl.addEventListener("click", chosen)
+			function chosen(e) {
+				console.log(e);
+				//når et bilde blir trykket på skal du gi en class til #leftSide som går at den får background-image = stein
 			}
 		</script>
 	</body>
