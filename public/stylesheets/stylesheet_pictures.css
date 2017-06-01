@@ -7,15 +7,23 @@
     display: flex;
 }
 .leftSide {
-    border-right: 1px solid #008C79;
+    border-right: 1px solid black;
 }
 .rightSide {
-    border-left: 1px solid #008C79;
+    border-left: 1px solid black;
 }
 .side{
     flex-grow: 1;
     display: block;
 }
-#unknown {
-
+.choises {
+	flex-grow: 1;
+	display: block;
+}
+#options {
+	position: absolute;
+	left: 20vw;
+	height: 300px;
+	display: block;
+	margin-top: 30px;
 }
