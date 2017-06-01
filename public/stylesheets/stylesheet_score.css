@@ -11,9 +11,9 @@ body {
     font-family: Open Sans;
 	color: black;
     font-size: 75px;
-    text-align: center;
-    margin-left: 18px;
-    padding-top: 63px;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 #top {
     height: 100px;
@@ -40,7 +40,7 @@ body {
 	margin: 0 auto;
 }
 .score {
-	display: relative;
+	display: block;
 	border: 1px solid black;
 }
 #leftdiv {
@@ -51,7 +51,7 @@ body {
 	width: 74px;
 	border-left: 1px solid black;
 }
-p {
+#player1, #player1elo, #player2, #player2elo {
 	color: white;
 }
 html {
