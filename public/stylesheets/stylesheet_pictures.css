@@ -15,12 +15,9 @@
 .side{
     flex-grow: 1;
     display: block;
-}
-.choices {
-	display: block;
-    height: 70px;
-    width: auto;
-    margin-top: 5px;
+	background-position: center;
+    background-repeat: no-repeat;
+	background-size: 230px;
 }
 #options {
 	position: absolute;
@@ -36,7 +33,16 @@
     border: 3px solid black;
     margin-bottom: 6px;
     background-color: rgba(32, 32, 32, 0.5);
+	background-size: 100px;
+	background-position: center;
+    background-repeat: no-repeat;
 }
-#paperPic {
-    padding-left: 20px;
+.stone {
+	background-image: url("http://elevweb.akershus-fk.no/~scan2008/Stein,%20Saks,%20Papir/stein.png");
+}
+.scissor {
+	background-image: url("http://elevweb.akershus-fk.no/~scan2008/Stein,%20Saks,%20Papir/scissor.png");
+}
+.paper {
+	background-image: url("http://elevweb.akershus-fk.no/~scan2008/Stein,%20Saks,%20Papir/Paper.jpg");
 }

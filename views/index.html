@@ -28,23 +28,13 @@
 			</div>
 		</div>
 		<div id="options">
-			<div class="choises_div" id="stone">
-				<img src="http://elevweb.akershus-fk.no/~scan2008/Stein,%20Saks,%20Papir/stein.png" alt="stone" class="choices">
-			</div>
-			<div class="choises_div" id="scissor">
-				<img src="http://elevweb.akershus-fk.no/~scan2008/Stein,%20Saks,%20Papir/scissor.png" alt="scissor" class="choices" width="96px">
-			</div>
-			<div class="choises_div" id="paper">
-				<img src="http://elevweb.akershus-fk.no/~scan2008/Stein,%20Saks,%20Papir/Paper.jpg" alt="paper" class="choices" id="paperPic">
-			</div>
+			<div class="choises_div stone" id="stone"></div>
+			<div class="choises_div scissor" id="scissor"></div>
+			<div class="choises_div paper" id="paper"></div>
 		</div>
 		<div id="chosenPic">
-			<div id="leftSide" class="side">
-			<!--	<img id="unknown" src="http://elevweb.akershus-fk.no/~auei1302/uke49/media/ukjent.png" alt="Unknown" width="300px" height="300px">-->
-			</div>
-			<div id="rightSide" class="side">
-			<!--	<img id="unknown" src="http://elevweb.akershus-fk.no/~auei1302/uke49/media/ukjent.png" alt="Unknown" width="300px" height="300px">-->
-			</div>
+			<div id="leftSide" class="side"></div>
+			<div id="rightSide" class="side"></div>
 		</div>
 		<script type="text/javascript">
 			var userOnePointsEl = document.querySelector("#points1").innerHTML
@@ -63,21 +53,37 @@
 				}
 			}
 			// eks: var user1 = new User(userOnePointsEl)
-			function add() {
-				let noe = document.querySelector("#player1")
-				noe.innerHTML += "DagSuger"
-				let fisk = document.querySelector("#player1elo")
-				fisk.innerHTML += "1200"
-				let krabbe = document.querySelector("#player2")
-				krabbe.innerHTML += "Kjeks"
-				let kjeks = document.querySelector("#player2elo")
-				kjeks.innerHTML += "1200"
-			}
 			let stoneEl = document.querySelector("#stone")
 			stoneEl.addEventListener("click", chosen)
+			let scissorEl = document.querySelector("#scissor")
+			scissorEl.addEventListener("click", chosen)
+			let paperEl = document.querySelector("#paper")
+			paperEl.addEventListener("click", chosen)
 			function chosen(e) {
-				console.log(e);
-				//når et bilde blir trykket på skal du gi en class til #leftSide som går at den får background-image = stein
+				if(e.target.id === "stone"){
+					if(document.querySelector("#leftSide").className.length > 4){
+						// nothing happens
+					}
+					else {
+					document.querySelector("#leftSide").className += " stone"
+					}
+				}
+				if(e.target.id === "scissor"){
+					if(document.querySelector("#leftSide").className.length > 4){
+						// nothting happens
+					}
+					else {
+					document.querySelector("#leftSide").className += " scissor"
+					}
+				}
+				if(e.target.id === "paper"){
+					if(document.querySelector("#leftSide").className.length > 4){
+						// nothing happens
+					}
+					else {
+					document.querySelector("#leftSide").className += " paper"
+					}
+				}
 			}
 		</script>
 	</body>
