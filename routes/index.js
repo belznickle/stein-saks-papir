@@ -7,6 +7,7 @@ router.use('/lobby', require('./lobby.js'))
 router.use('/login', require('./login.js'))
 router.use('/logout', require('./logout.js'))
 router.use('/register', require('./register.js'))
+router.use('/join', require('./join.js'))
 router.use('/waiting', require('./waiting.js'))
 
 router.get('/', (req, res) => {
