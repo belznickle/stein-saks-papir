@@ -1,0 +1,65 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		title Stein, Saks, Papir
+		link(rel='stylesheet', href='../public/stylesheets/stylesheet_score.css')
+		link(rel='stylesheet', href='../public/stylesheets/stylesheet_pictures.css')
+		link(rel='stylesheet', href='../stylesheets/backgroundColor.css')
+	body
+		#top
+			#frame
+				#player1info.inline.playerinfo
+					p#player1 Player: #{you.name}
+					p#player1elo Elo: #{you.elo}
+				.scoreBorder.inline
+					#leftdiv.score
+						p#points1.points 0
+					#rightdiv.score
+						p#points2.points 0
+				#player2info.inline.playerinfo
+					p#player2 Player: #{opponent.name}
+					p#player2elo Elo: #{opponent.elo}
+		#options
+			#stone.choises_div.stone
+			#scissor.choises_div.scissor
+			#paper.choises_div.paper
+		#chosenPic
+			#leftSide.side
+			#rightSide.side
+		script(type='text/javascript').
+			var userOnePointsEl = document.querySelector("#points1").innerHTML
+			var userTwoPointsEl = document.querySelector("#points2").innerHTML
+			let stoneEl = document.querySelector("#stone")
+			stoneEl.addEventListener("click", chosen)
+			let scissorEl = document.querySelector("#scissor")
+			scissorEl.addEventListener("click", chosen)
+			let paperEl = document.querySelector("#paper")
+			paperEl.addEventListener("click", chosen)
+			function chosen(e) {
+			if(e.target.id === "stone"){
+			if(document.querySelector("#leftSide").className.length > 4){
+			// nothing happens
+			}
+			else {
+			document.querySelector("#leftSide").className += " stone"
+			}
+			}
+			if(e.target.id === "scissor"){
+			if(document.querySelector("#leftSide").className.length > 4){
+			// nothting happens
+			}
+			else {
+			document.querySelector("#leftSide").className += " scissor"
+			}
+			}
+			if(e.target.id === "paper"){
+			if(document.querySelector("#leftSide").className.length > 4){
+			// nothing happens
+			}
+			else {
+			document.querySelector("#leftSide").className += " paper"
+			}
+			}
+			}
+		script(src='/javascript/game.js' type='text/javascript')

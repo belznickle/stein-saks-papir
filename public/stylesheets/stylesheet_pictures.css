@@ -21,7 +21,7 @@
 }
 #options {
 	position: absolute;
-	left: 20vw;
+	left: 15vw;
 	height: 300px;
 	display: block;
 	margin-top: 20px;
@@ -36,6 +36,9 @@
 	background-size: 100px;
 	background-position: center;
     background-repeat: no-repeat;
+}
+.choises_div:hover {
+	background-color: rgba(64, 64, 64, 0.5);
 }
 .stone {
 	background-image: url("http://elevweb.akershus-fk.no/~scan2008/Stein,%20Saks,%20Papir/stein.png");
