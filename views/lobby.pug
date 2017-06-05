@@ -7,10 +7,10 @@ html
 	body
 		form(action='/lobby/create', method='post')
 			.games
-				input(type='submit', value='create lobby',)
+				p Join Game
 		form(action='/lobby/delete', method='post')
 			.games
-				input(type='submit', value='delete lobby')
+				p Create Game
 		script(src='/socket.io/socket.io.js' type='text/javascript')
 		script(type='text/javascript').
 			const user = !{JSON.stringify(user)}
