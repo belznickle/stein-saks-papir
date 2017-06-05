@@ -1,0 +1,42 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		title home
+	body
+		script(type='text/javascript').
+			let games = !{JSON.stringify(games)}
+			for (let game of games) {
+				if (!game.opponent) {
+					let p = document.createElement('p')
+					p.innerHTML = `${game.creator} venter på en spiller, `
+					let a = document.createElement('a')
+					a.href = `../game/${game.creator}`
+					a.innerHTML = 'klikk for å bli med'
+					p.appendChild(a)
+					document.body.appendChild(p)
+				}
+			}
+		
+			let socket = io()
+			socket.on('createdLobby', (creator) => {
+				let p = document.createElement('p')
+				p.innerHTML = `${creator} venter på en spiller, `
+				let a = document.createElement('a')
+				a.href = `../game/${creator}`
+				a.innerHTML = 'klikk for å bli med'
+				p.appendChild(a)
+				document.body.appendChild(p)
+			})
+
+			socket.on('endedLobby', (creator) => {
+				let paragraphs = document.querySelectorAll('p')
+				for (let p of paragraphs) {
+					if (p.innerHTML.split(' ')[0] === creator) {
+						document.body.removeChild(p)
+						return
+					}
+				}
+			})
+			
+			

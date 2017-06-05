@@ -6,76 +6,17 @@ html
 		link(href='/stylesheets/lobby.css', rel='stylesheet')
 		link(href='/stylesheets/backgroundColor.css', rel='stylesheet')
 	body
-		#join
-			p Join Game
+		a(href='/join')
+			#join
+				p Join Game
 		#create
 			p Create Game
 		script(src='/socket.io/socket.io.js' type='text/javascript')
 		script(type='text/javascript').
-			const user = !{JSON.stringify(user)}
-			init()
-			let socket = io()
-			socket.on('createdLobby', (creator) => {
-				let p = document.createElement('p')
-				p.innerHTML = `${creator} venter på en spiller, `
-				let a = document.createElement('a')
-				a.href = `../game/${creator}`
-				a.innerHTML = 'klikk for å bli med'
-				p.appendChild(a)
-				document.body.appendChild(p)
+			document.querySelector('#create').addEventListener('click', () => {
+				let form = document.createElement('form')
+				form.method = 'POST'
+				form.action = '/lobby/create'
+				document.body.appendChild(form)
+				form.submit()
 			})
-
-			socket.on('endedLobby', (creator) => {
-				let paragraphs = document.querySelectorAll('p')
-				for (let p of paragraphs) {
-					if (p.innerHTML.split(' ')[0] === creator) {
-						document.body.removeChild(p)
-						return
-					}
-				}
-			})
-
-			socket.on('gameStarted', (creator) => {
-				if (creator === user) {
-					window.location.replace(`/game/${user}`)
-				} else {
-					let paragraphs = document.querySelectorAll('p')
-					for (let p of paragraphs) {
-						if (p.innerHTML.split(' ')[0] === creator) {
-							document.body.removeChild(p)
-							return
-						}
-					}
-				}
-			})
-
-			function init() {
-				let games = !{JSON.stringify(games)}
-				for (let game of games) {
-					if (!game.opponent) {
-						let p = document.createElement('p')
-						p.innerHTML = `${game.creator} venter på en spiller, `
-						let a = document.createElement('a')
-						a.href = `../game/${game.creator}`
-						a.innerHTML = 'klikk for å bli med'
-						p.appendChild(a)
-						document.body.appendChild(p)
-					}
-				}
-				
-				function request(where) {
-					let form = document.createElement('form')
-					form.method = 'POST'
-					form.action = `/lobby/${where}`
-					document.body.appendChild(form)
-					form.submit()
-				}
-				
-				document.querySelector('#join').addEventListener('click', () => {
-					request('join')
-				})
-				
-				document.querySelector('#create').addEventListener('click', () => {
-					request('create')
-				})
-			}
