@@ -16,7 +16,7 @@ html
 			document.querySelector('#create').addEventListener('click', () => {
 				let form = document.createElement('form')
 				form.method = 'POST'
-				form.action = `/join`
+				form.action = '/lobby/create'
 				document.body.appendChild(form)
 				form.submit()
 			})
