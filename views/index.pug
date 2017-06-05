@@ -37,29 +37,29 @@ html
 			let paperEl = document.querySelector("#paper")
 			paperEl.addEventListener("click", chosen)
 			function chosen(e) {
-			if(e.target.id === "stone"){
-			if(document.querySelector("#leftSide").className.length > 4){
-			// nothing happens
-			}
-			else {
-			document.querySelector("#leftSide").className += " stone"
-			}
-			}
-			if(e.target.id === "scissor"){
-			if(document.querySelector("#leftSide").className.length > 4){
-			// nothting happens
-			}
-			else {
-			document.querySelector("#leftSide").className += " scissor"
-			}
-			}
-			if(e.target.id === "paper"){
-			if(document.querySelector("#leftSide").className.length > 4){
-			// nothing happens
-			}
-			else {
-			document.querySelector("#leftSide").className += " paper"
-			}
-			}
+				if(e.target.id === "stone"){
+					if(document.querySelector("#leftSide").className.length > 4){
+						// nothing happens
+					}
+					else {
+						document.querySelector("#leftSide").className += " stone"
+					}
+				}
+				if(e.target.id === "scissor"){
+					if(document.querySelector("#leftSide").className.length > 4){
+						// nothting happens
+					}
+					else {
+						document.querySelector("#leftSide").className += " scissor"
+					}
+				}
+				if(e.target.id === "paper"){
+					if(document.querySelector("#leftSide").className.length > 4){
+						// nothing happens
+					}
+					else {
+						document.querySelector("#leftSide").className += " paper"
+					}
+				}
 			}
 		script(src='/javascript/game.js' type='text/javascript')
