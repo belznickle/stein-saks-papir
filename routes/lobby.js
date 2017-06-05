@@ -23,7 +23,7 @@ router.post('/create', (req, res) => {
 			localSocket.emit('createdLobby', req.user.username)
 		}
 
-		res.redirect('/lobby')
+		res.redirect('/temp')
 	}
 })
 

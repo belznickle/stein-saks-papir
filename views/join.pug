@@ -4,6 +4,7 @@ html
 		meta(charset='utf-8')
 		title home
 	body
+		script(src='/socket.io/socket.io.js' type='text/javascript')
 		script(type='text/javascript').
 			let games = !{JSON.stringify(games)}
 			for (let game of games) {
