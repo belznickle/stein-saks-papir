@@ -6,9 +6,10 @@ html
 		link(href='/stylesheets/lobby.css', rel='stylesheet')
 		link(href='/stylesheets/backgroundColor.css', rel='stylesheet')
 	body
-		#join
+		a(href='/logout', id='logout') Log Out
+		#join.games
 			p Join Game
-		#create
+		#create.games
 			p Create Game
 		script(src='/socket.io/socket.io.js' type='text/javascript')
 		script(type='text/javascript').
@@ -62,7 +63,7 @@ html
 						document.body.appendChild(p)
 					}
 				}
-				
+
 				function request(where) {
 					let form = document.createElement('form')
 					form.method = 'POST'
@@ -70,11 +71,11 @@ html
 					document.body.appendChild(form)
 					form.submit()
 				}
-				
+
 				document.querySelector('#join').addEventListener('click', () => {
 					request('join')
 				})
-				
+
 				document.querySelector('#create').addEventListener('click', () => {
 					request('create')
 				})

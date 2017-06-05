@@ -1,7 +1,7 @@
 #logout {
 	position: absolute;
-	margin-right: 0;
-	margin-top: 0;
+	right: 0;
+	top: 0;
 	color: red;
 	text-decoration: underline;
 }
@@ -14,9 +14,16 @@
 	margin-top: 10vh;
 	border: 1px solid black;
 }
+.games:hover {
+	background-color: rgba(64, 64, 64, 0.5);
+}
 p {
 	text-align: center;
 	color: white;
 	margin-top: 17.5%;
 	font-size: 2vw;
+}
+body {
+	width: 100vw;
+	height: 100vh;
 }
