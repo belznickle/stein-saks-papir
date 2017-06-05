@@ -1,3 +1,12 @@
 {
-  "games": []
+  "games": [
+    {
+      "creator": "a",
+      "creatorPick": null,
+      "creatorWins": 0,
+      "opponent": null,
+      "opponentPick": null,
+      "opponentWins": 0
+    }
+  ]
 }
