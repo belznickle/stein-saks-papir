@@ -13,25 +13,25 @@ html
 			let games = !{JSON.stringify(games)}
 			for (let game of games) {
 				if (!game.opponent) {
-				let table =  document.querySelector('table')
-				let tr = document.createElement('tr')
+					let table =  document.querySelector('table')
+					let tr = document.createElement('tr')
 
-				let creator = document.createElement('td')
-				let elo = document.createElement('td')
+					let creator = document.createElement('td')
+					let elo = document.createElement('td')
 
-				creator.innerHTML = `${game.creator}`
-				elo.innerHTML = `${game.creatorElo}`
+					creator.innerHTML = `${game.creator}`
+					elo.innerHTML = `${game.creatorElo}`
 
-				let link = document.createElement('td')
-				let a = document.createElement('a')
-				a.innerHTML = '->'
-				a.href = `../game/${game.creator}`
-				link.appendChild(a)
+					let link = document.createElement('td')
+					let a = document.createElement('a')
+					a.innerHTML = '->'
+					a.href = `../game/${game.creator}`
+					link.appendChild(a)
 
-				tr.appendChild(creator)
-				tr.appendChild(elo)
-				tr.appendChild(link)
-				table.appendChild(tr)
+					tr.appendChild(creator)
+					tr.appendChild(elo)
+					tr.appendChild(link)
+					table.appendChild(tr)
 				}
 			}
 
