@@ -4,21 +4,37 @@ html
 		meta(charset='utf-8')
 		title home
 	body
+		table
+			th Name
+			th elo
+			th join
 		script(src='/socket.io/socket.io.js' type='text/javascript')
 		script(type='text/javascript').
 			let games = !{JSON.stringify(games)}
 			for (let game of games) {
 				if (!game.opponent) {
-					let p = document.createElement('p')
-					p.innerHTML = `${game.creator} venter på en spiller, `
-					let a = document.createElement('a')
-					a.href = `../game/${game.creator}`
-					a.innerHTML = 'klikk for å bli med'
-					p.appendChild(a)
-					document.body.appendChild(p)
+				let table =  document.querySelector('table')
+				let tr = document.createElement('tr')
+
+				let creator = document.createElement('td')
+				let elo = document.createElement('td')
+
+				creator.innerHTML = `${game.creator}`
+				elo.innerHTML = `${game.creatorElo}`
+
+				let link = document.createElement('td')
+				let a = document.createElement('a')
+				a.innerHTML = '->'
+				a.href = `../game/${game.creator}`
+				link.appendChild(a)
+
+				tr.appendChild(creator)
+				tr.appendChild(elo)
+				tr.appendChild(link)
+				table.appendChild(tr)
 				}
 			}
-		
+
 			let socket = io()
 			socket.on('createdLobby', (creator) => {
 				let p = document.createElement('p')
@@ -39,5 +55,3 @@ html
 					}
 				}
 			})
-			
-			
