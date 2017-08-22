@@ -39,6 +39,7 @@
 }
 .choises_div:hover {
 	background-color: rgba(64, 64, 64, 0.5);
+	cursor: pointer;
 }
 .stone {
 	background-image: url("http://elevweb.akershus-fk.no/~scan2008/Stein,%20Saks,%20Papir/stein.png");
