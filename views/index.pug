@@ -27,39 +27,5 @@ html
 		#chosenPic
 			#leftSide.side
 			#rightSide.side
-		script(type='text/javascript').
-			var userOnePointsEl = document.querySelector("#points1").innerHTML
-			var userTwoPointsEl = document.querySelector("#points2").innerHTML
-			let stoneEl = document.querySelector("#stone")
-			stoneEl.addEventListener("click", chosen)
-			let scissorEl = document.querySelector("#scissor")
-			scissorEl.addEventListener("click", chosen)
-			let paperEl = document.querySelector("#paper")
-			paperEl.addEventListener("click", chosen)
-			function chosen(e) {
-				if(e.target.id === "stone"){
-					if(document.querySelector("#leftSide").className.length > 4){
-						// nothing happens
-					}
-					else {
-						document.querySelector("#leftSide").className += " stone"
-					}
-				}
-				if(e.target.id === "scissor"){
-					if(document.querySelector("#leftSide").className.length > 4){
-						// nothting happens
-					}
-					else {
-						document.querySelector("#leftSide").className += " scissor"
-					}
-				}
-				if(e.target.id === "paper"){
-					if(document.querySelector("#leftSide").className.length > 4){
-						// nothing happens
-					}
-					else {
-						document.querySelector("#leftSide").className += " paper"
-					}
-				}
-			}
-		script(src='/javascript/game.js' type='text/javascript')
+
+		script(src='/javascript/game_v_andre.js' type='text/javascript')

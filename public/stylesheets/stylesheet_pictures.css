@@ -2,7 +2,6 @@
     width: 600px;
     height: 300px;
     border: 3px solid black;
-    background-color: white;
     margin: 20px auto;
     display: flex;
 }
@@ -18,6 +17,7 @@
 	background-position: center;
     background-repeat: no-repeat;
 	background-size: 230px;
+	background-color: #322c39;
 }
 #options {
 	position: absolute;
