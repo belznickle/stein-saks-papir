@@ -9,7 +9,7 @@ function chosen(e) {
 	//Koden under er noe merkelig greier fra eirik
 	let form = document.createElement('form')
 	form.method = 'POST'
-	form.action = '/index'
+	form.action = '/game'
 
 	let element = document.createElement('input')
 	if(e.target.id === "stone"){

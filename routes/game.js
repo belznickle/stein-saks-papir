@@ -36,7 +36,7 @@ router.get('/:creator', (req, res) => {
 
 			you = db.info(you)
 			opponent = db.info(opponent)
-			res.render('game', { you: you, opponent: opponent })
+			res.render('index', { you: you, opponent: opponent })
 		} else {
 			res.redirect('/lobby')
 		}
