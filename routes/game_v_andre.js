@@ -9,13 +9,13 @@ function chosen(e) {
 	//Koden under er noe merkelig greier fra eirik
 	let form = document.createElement('form')
 	form.method = 'POST'
-	form.action = '/game'
+	form.action = '/index'
 
 	let element = document.createElement('input')
 	if(e.target.id === "stone"){
 		element.name = 'stein'
 		element.value = 'stein'
-	}	
+	}
 	else if (e.target.id === "scissor"){
 		element.name = 'saks'
 		element.value = 'saks'
