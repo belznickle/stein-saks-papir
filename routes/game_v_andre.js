@@ -14,16 +14,17 @@ function chosen(e) {
 	let element = document.createElement('input')
 	if(e.target.id === "stone"){
 		element.name = 'stein'
-	}
+		element.value = 'stein'
+	}	
 	else if (e.target.id === "scissor"){
 		element.name = 'saks'
+		element.value = 'saks'
 	}
 	else if (e.target.id === "paper"){
 		element.name = 'papir'
+		element.value = 'papir'
 	}
-
-	element.type = 'hidden'
-	element.value = e.target.innerHTML
+		element.type = 'hidden'
 
 	form.appendChild(element)
 	document.body.appendChild(form)
