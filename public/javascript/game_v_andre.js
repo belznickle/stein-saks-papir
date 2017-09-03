@@ -8,33 +8,16 @@ paperEl.addEventListener("click", chosen)
 
 function chosen(e) {
 	//Koden under er noe merkelig greier fra eirik
+	// sender valg av stein/saks/papir
+	let data = {choice: ''}
+	if (e.target.id === "stone") data.choice = 'stein'
+	else if (e.target.id === "scissor") data.choice = 'saks'
+	else if (e.target.id === "paper") data.choice = 'papir'
 
-	// form for å sende valg av stein/saks/papir
-	let form = document.createElement('form')
-	let formData = new FormData()
-	form.id = 'form'
-	form.method = 'POST'
-	form.action = '/game'
-
-	let element = document.createElement('input')
-	element.name = 'choice'
-	element.type = 'hidden'
-
-	if (e.target.id === "stone") element.value = 'stein'
-	else if (e.target.id === "scissor") element.value = 'saks'
-	else if (e.target.id === "paper") element.value = 'papir'
-
-	form.appendChild(element)
-	document.body.appendChild(form)
-
-	$.ajax({
-		url: '/game',
-		type: 'POST',
-		data: $('#form').serialize(),
-		success: () => {}
-	})
-
-	form.parentNode.removeChild(form) // fjerner seg selv
+	let xhr = new XMLHttpRequest()
+	xhr.open('POST', '/game', true)
+	xhr.setRequestHeader('Content-type', 'application/json');
+	xhr.send(JSON.stringify(data))
 
 	//koden under er skrevet av mesteren
 	if(e.target.id === "stone"){
