@@ -34,8 +34,8 @@ io.on('connection', (socket) => {
 		io.emit('gameStarted', creator)
 	})
 
-	socket.on('gameEnded', (creator, opponent, winner) => {
-		io.emit('gameEnded', creator, opponent, winner)
+	socket.on('gameEnded', info => {
+		io.emit('gameEnded', info)
 	})
 })
 
