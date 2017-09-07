@@ -42,11 +42,11 @@
 	cursor: pointer;
 }
 .stone {
-	background-image: url("http://elevweb.akershus-fk.no/~scan2008/Stein,%20Saks,%20Papir/stein.png");
+	background-image: url("http://elevweb.akershus-fk.no/~scan2008/IT2/Stein,%20Saks,%20Papir/stein.png");
 }
 .scissor {
-	background-image: url("http://elevweb.akershus-fk.no/~scan2008/Stein,%20Saks,%20Papir/scissor.png");
+	background-image: url("http://elevweb.akershus-fk.no/~scan2008/IT2/Stein,%20Saks,%20Papir/scissor.png");
 }
 .paper {
-	background-image: url("http://elevweb.akershus-fk.no/~scan2008/Stein,%20Saks,%20Papir/Paper.jpg");
+	background-image: url("http://elevweb.akershus-fk.no/~scan2008/IT2/Stein,%20Saks,%20Papir/Paper.jpg");
 }
